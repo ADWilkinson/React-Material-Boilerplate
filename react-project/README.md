@@ -1,13 +1,3 @@
-
-## Description
-
-General purpose boilerplate for simple react projects.
-
-  - Routing
-  - Material-UI
-  - Redux (Soon)
-
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
