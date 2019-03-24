@@ -4,5 +4,5 @@ General purpose boilerplate for simple react projects.
 
   - Routing
   - Material-UI
-  - Redux (Soon)
+  - Constate (React Hooks & Context Based State)
 

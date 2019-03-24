@@ -2,24 +2,27 @@ import React from 'react';
 import Routes from './routes';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { MuiThemeProvider } from '@material-ui/core/styles';
-import theme from './theme';
+import theme from './theme/theme';
 import Navbar from './components/Navbar';
+import GlobalStore from './contexts/global-store';
 
 const App = () => {
   return (
     <div>
       <MuiThemeProvider theme={theme}>
-        <CssBaseline />
+        <GlobalStore.Provider globalStore={{}}>
+          <CssBaseline />
 
-        <header>
-          <Navbar />
-        </header>
+          <header>
+            <Navbar />
+          </header>
 
-        <main>
-          <Routes />
-        </main>
+          <main>
+            <Routes />
+          </main>
 
-        <footer />
+          <footer />
+        </GlobalStore.Provider>
       </MuiThemeProvider>
     </div>
   );
