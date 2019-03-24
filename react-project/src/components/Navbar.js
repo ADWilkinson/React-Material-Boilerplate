@@ -38,6 +38,10 @@ const styles = theme => ({
 const Navbar = props => {
   const { classes } = props;
 
+  /*
+
+  Context API Hooks Example:
+
   const { state, dispatch } = useContext(Store);
 
   useEffect(() => {
@@ -46,15 +50,12 @@ const Navbar = props => {
       payload: 'HOMEPAGE'
     });
   }, []);
+  */
 
   return (
     <MuiAppBar position="static">
       <MuiToolbar className={classes.toolbar}>
         <div className={classes.left} />
-        <h2>
-          {state.location.location}
-          {'-'}
-        </h2>
         <Link variant="h6" underline="none" color="inherit" className={classes.title} href="/">
           REACT APP
         </Link>

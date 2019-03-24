@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
-import LoginPage from './pages/LoginPage';
-import HomePage from './pages/HomePage';
-import SignupPage from './pages/SignupPage';
+import LoginPage from '../pages/LoginPage';
+import HomePage from '../pages/HomePage';
+import SignupPage from '../pages/SignupPage';
 
 export default props => (
   <Router>

@@ -2,14 +2,13 @@ import React, { useContext } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import MuiButton from '@material-ui/core/Button';
 import MuiTypography from '@material-ui/core/Typography';
-import { Store } from '../store';
 
 const backgroundImage = require('../assets/Hero.jpg');
 
 const styles = theme => ({
   background: {
     backgroundImage: `url(${backgroundImage})`,
-    backgroundColor: '#7fc7d9', 
+    backgroundColor: '#7fc7d9',
     backgroundPosition: 'center',
     height: 500
   },
@@ -28,13 +27,9 @@ const styles = theme => ({
 const ProductHero = props => {
   const { classes } = props;
 
-  const { state } = useContext(Store);
-
   return (
     <section className={classes.background}>
-      <MuiTypography color="inherit" align="center" variant="h2" marked="center">
-        {state.location.location}
-      </MuiTypography>
+      <MuiTypography color="inherit" align="center" variant="h2" marked="center" />
       <MuiTypography color="inherit" align="center" variant="h5" className={classes.h5} />
       <MuiButton color="secondary" variant="contained" size="large" className={classes.button} href="/signup">
         Register

@@ -10,7 +10,10 @@ const initialState = {
 };
 
 const mainReducer = (state, action) => {
-  // middleware goes here, i.e calling analytics service, etc.
+  /*
+    Middleware goes here.
+   */
+
   return {
     location: navigationReducer(state, action),
     users: usersReducer(state, action)
