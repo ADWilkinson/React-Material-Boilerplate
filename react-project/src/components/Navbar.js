@@ -5,6 +5,7 @@ import Link from '@material-ui/core/Link';
 import MuiAppBar from '@material-ui/core/AppBar';
 import MuiToolbar from '@material-ui/core/Toolbar';
 import { Store } from '../store';
+import { SET_LOCATION } from '../constants/navigationActions';
 
 const styles = theme => ({
   title: {
@@ -41,7 +42,7 @@ const Navbar = props => {
 
   useEffect(() => {
     dispatch({
-      type: 'SET_LOCATION',
+      type: SET_LOCATION,
       payload: 'HOMEPAGE'
     });
   }, []);
@@ -50,7 +51,10 @@ const Navbar = props => {
     <MuiAppBar position="static">
       <MuiToolbar className={classes.toolbar}>
         <div className={classes.left} />
-        <h2>{state.location.location}{'-'}</h2>
+        <h2>
+          {state.location.location}
+          {'-'}
+        </h2>
         <Link variant="h6" underline="none" color="inherit" className={classes.title} href="/">
           REACT APP
         </Link>

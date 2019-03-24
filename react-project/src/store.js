@@ -1,28 +1,12 @@
 import React, { useReducer } from 'react';
+import { navigationReducer } from './reducers/navigationReducer';
+import { usersReducer } from './reducers/usersReducer';
 
 export const Store = React.createContext();
 
 const initialState = {
   location: '',
   users: []
-};
-
-const navigationReducer = (state, action) => {
-  switch (action.type) {
-    case 'SET_LOCATION':
-      return { ...state, location: action.payload };
-    default:
-      return state;
-  }
-};
-
-const usersReducer = (state, action) => {
-  switch (action.type) {
-    case 'GET_USER_LIST':
-      return { ...state, location: action.payload };
-    default:
-      return state;
-  }
 };
 
 const mainReducer = (state, action) => {
