@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SignupPage = () => {
-  return <div />;
+  return <React.Fragment />;
 };
 
 export default SignupPage;

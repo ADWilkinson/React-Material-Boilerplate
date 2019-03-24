@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import Link from '@material-ui/core/Link';
 import MuiAppBar from '@material-ui/core/AppBar';
 import MuiToolbar from '@material-ui/core/Toolbar';
+import { Store } from '../store';
 
 const styles = theme => ({
   title: {
@@ -36,12 +37,22 @@ const styles = theme => ({
 const Navbar = props => {
   const { classes } = props;
 
+  const { state, dispatch } = useContext(Store);
+
+  useEffect(() => {
+    dispatch({
+      type: 'SET_LOCATION',
+      payload: 'HOMEPAGE'
+    });
+  }, []);
+
   return (
     <MuiAppBar position="static">
       <MuiToolbar className={classes.toolbar}>
         <div className={classes.left} />
+        <h2>{state.location.location}{'-'}</h2>
         <Link variant="h6" underline="none" color="inherit" className={classes.title} href="/">
-          {'REACT APP'}
+          REACT APP
         </Link>
         <div className={classes.right}>
           <Link color="inherit" variant="h6" underline="none" className={classes.rightLink} href="/login">

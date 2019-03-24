@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import MuiButton from '@material-ui/core/Button';
 import MuiTypography from '@material-ui/core/Typography';
+import { Store } from '../store';
 
 const backgroundImage = require('../assets/Hero.jpg');
 
 const styles = theme => ({
   background: {
     backgroundImage: `url(${backgroundImage})`,
-    backgroundColor: '#7fc7d9', // Average color of the background image.
+    backgroundColor: '#7fc7d9', 
     backgroundPosition: 'center',
     height: 500
   },
@@ -17,7 +18,7 @@ const styles = theme => ({
   },
   h5: {
     marginBottom: theme.spacing.unit * 4,
-    marginTop: theme.spacing.unit * 4,
+    marginTop: theme.spacing.unit * 4
   },
   more: {
     marginTop: theme.spacing.unit * 2
@@ -27,20 +28,18 @@ const styles = theme => ({
 const ProductHero = props => {
   const { classes } = props;
 
+  const { state } = useContext(Store);
+
   return (
     <section className={classes.background}>
       <MuiTypography color="inherit" align="center" variant="h2" marked="center">
-        Header text
+        {state.location.location}
       </MuiTypography>
-      <MuiTypography color="inherit" align="center" variant="h5" className={classes.h5}>
-      Some Text Here Some Text Here Some Text Here Some Text Here Some Text Here
-      </MuiTypography>
+      <MuiTypography color="inherit" align="center" variant="h5" className={classes.h5} />
       <MuiButton color="secondary" variant="contained" size="large" className={classes.button} href="/signup">
         Register
       </MuiButton>
-      <MuiTypography variant="body2" color="inherit" className={classes.more}>
-      Some Text Here
-      </MuiTypography>
+      <MuiTypography variant="body2" color="inherit" className={classes.more} />
     </section>
   );
 };

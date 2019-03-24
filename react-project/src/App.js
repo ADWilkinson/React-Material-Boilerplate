@@ -4,27 +4,25 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import theme from './theme/theme';
 import Navbar from './components/Navbar';
-import GlobalStore from './contexts/global-store';
+import { StoreProvider } from './store';
 
 const App = () => {
   return (
-    <div>
-      <MuiThemeProvider theme={theme}>
-        <GlobalStore.Provider globalStore={{}}>
-          <CssBaseline />
+    <MuiThemeProvider theme={theme}>
+      <StoreProvider>
+        <CssBaseline />
 
-          <header>
-            <Navbar />
-          </header>
+        <header>
+          <Navbar />
+        </header>
 
-          <main>
-            <Routes />
-          </main>
+        <main>
+          <Routes />
+        </main>
 
-          <footer />
-        </GlobalStore.Provider>
-      </MuiThemeProvider>
-    </div>
+        <footer />
+      </StoreProvider>
+    </MuiThemeProvider>
   );
 };
 

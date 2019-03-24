@@ -3,9 +3,9 @@ import ProductHero from '../components/ProductHero';
 
 const HomePage = () => {
   return (
-    <div>
+    <React.Fragment>
       <ProductHero />
-    </div>
+    </React.Fragment>
   );
 };
 
