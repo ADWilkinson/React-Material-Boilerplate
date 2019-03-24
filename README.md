@@ -1,8 +1,8 @@
 ## Purpose
 
-General purpose boilerplate for simple react projects.
+General purpose, simple boilerplate to get lightweight react projects off the ground.
 
   - Routing
   - Material-UI
-  - Constate (React Hooks & Context Based State)
+  - Context global state management
 
